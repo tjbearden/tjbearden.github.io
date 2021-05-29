@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template for CIT 160</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <Script>
+        function checkmath() {
+            // input two numbers, an operator and the answer
+            let num1 = parseFloat(document.getElementById('num1').value);
+            let operator = document.getElementById('operator').value;
+            let num2 = parseFloat(document.getElementById('num2').value);
+            let answer = parseFloat(document.getElementById('answer').value);
+            let message = "Incorrect 😢";
+            let answerkey = 0;
+            // Processing
+            switch (operator){
+                case "+":
+                    answerkey = num1 + num2;
+                    break;
+                case "-":
+                    answerkey = num1 - num2;
+                    break;
+                case "/":
+                    answerkey = num1 / num2;
+                    break;
+                case "*":
+                    answerkey = num1 * num2;
+                    break;
+                default:
+                    message = "You must enter a valid operator";
+            }
+            if (answerkey == answer){
+                message = "Correct! 🏆";
+            }
+
+           //Output
+           document.getElementById('output').innerHTML = message;
+        }
+
+    </Script>
+</head>
+
+<body>
+
+
+    <header>
+        <h1>Week 6: calculator</h1>
+        <h2>Tim Bearden</h2>
+
+    </header>
+    <main>
+        <label>Math is Fun</label>
+        <label> Nubmer One: <input type="text" id="num1"></label>
+        <lable> Operator: <select id="operator">
+            <option value="0" disable selected>Choose</option>
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            </select>
+        </lable>
+        <label> Number Two: <input type="text" id="num2" ></label>
+        <label>Answer: <input type="text" id="answer" ></label>
+        <button onclick="checkmath()">Check Math</button>
+        <hr>
+        <p id="output"></p>
+    </main>
+    <footer>
+
+        &copy;2021 &bull; Tim Bearden &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+
+    
+    <script >
+
+
+
+
+    </script>
+      
+</body>
+
+
+</html>
