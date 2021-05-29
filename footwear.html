@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template for CIT 160</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <Script>
+        function foot(){
+            //input
+            let weather = parseFloat(document.getElementById('input1').value);
+            //output
+            switch (weather){
+                case 1:
+                    message = "You should wear sandals!";
+                    break;
+                case 2:
+                    message = "You should wearg galoshes!";
+                    break;
+                case 3:
+                    message = "You should wear boots!";
+                    break;
+                case 4:
+                    message = "You should wear shoes!"; 
+            }
+            //output
+            document.getElementById('output').innerHTML =  message
+        }
+ 
+
+    </Script>
+</head>
+
+<body>
+
+
+    <header>
+        <h1>Week 6: weather shoes</h1>
+        <h2>Tim Bearden</h2>
+
+    </header>
+    <main>
+        <label>Whats the weather like? </label>
+        <label> Weather: <select id="input1">
+            <option value="0" disable selected>Choose an option</option>
+            <option value="1">hot</option>
+            <option value="2">rain</option>
+            <option value="3">snow</option>
+            <option value="4">unknown</option>
+            </select>
+        </label>
+        <button onclick="foot()">Appropriate footwear?</button>
+        <hr>
+        <p id="output"></p>
+
+    </main>
+    <footer>
+
+        &copy;2021 &bull; Tim Bearden &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+
+    
+    <script >
+
+
+
+
+    </script>
+      
+</body>
+
+
+</html>
