@@ -1,0 +1,74 @@
+
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template for CIT 160</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <Script>
+        function alarm(){
+            //Input
+            let now = new Date();
+            let month = now.getMonth();
+            let dayOfMonth = now.getDate();
+            message = 'Get up!'
+
+            // processing
+            if ((now.getDay(0) == 0 ||  now.getDay(0) == 6) || // Sunday, Saturday
+                (month == 0 && dayofmonth == 0) || // New Years Day
+                (month == 6 && dayofmonth == 3) || // 4th of July
+                (month == 11 && dayofmonth == 24)  // Christmas
+            ){
+                message = "Sleep in!";
+            }
+            else { message };
+   
+
+
+            //output
+            document.getElementById("output").textContent = message
+
+
+
+        }
+
+
+    </Script>
+</head>
+
+<body>
+
+
+    <header>
+        <h1>Week 7: Alarm</h1>
+        <h2>Tim Bearden</h2>
+
+    </header>
+    <main>
+        <label>Do I have to get up now? </label>
+        <button onclick="alarm()">Can I snooze?</button>
+        <hr>
+        <p id="output"></p>
+
+    </main>
+    <footer>
+
+        &copy;2021 &bull; Tim Bearden &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+
+    
+    <script >
+
+
+
+
+    </script>
+      
+</body>
+
+
+>>>>>>> 34466770850e1fb66f08e4da7b60e8947ec976b1
+</html>
