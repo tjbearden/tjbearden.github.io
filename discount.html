@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 7 for CIT 160</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <Script>
+        function logic(){
+
+            let message = "1"; // default value
+            let d = new Date(); 
+            //Input
+            let total = parseFloat(document.getElementById("total").value);
+            // processing
+            if (total > 50  && (d.getDay(0) == 2 ||  d.getDay(0) == 3)) {
+                message = ".9";
+            }
+            else { message };
+            let subtotal = total * message;
+            let tax = subtotal * 1.06;
+            let final = tax.toFixed(2);
+
+
+            //output
+            document.getElementById("output").textContent = "Your total with Tax is " + final
+
+
+//d.getDay() = int of day wed = 3, tues = 2
+
+        }
+
+
+    </Script>
+</head>
+
+<body>
+
+
+    <header>
+        <h1>Week 7: Discount</h1>
+        <h2>Tim Bearden</h2>
+
+    </header>
+    <main>
+        <label>Can I get a discount? </label>
+        <label> Enter the Sales Total: <input type="text" id="total"></label>
+        <button onclick="logic()">Compute Discount</button>
+        <hr>
+        <p id="output"></p>
+
+    </main>
+    <footer>
+
+        &copy;2021 &bull; Tim Bearden &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+
+    
+    <script >
+
+
+
+
+    </script>
+      
+</body>
+
+
+</html>
