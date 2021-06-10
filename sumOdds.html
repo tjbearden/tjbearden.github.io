@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SumOdds for CIT 160</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <Script>
+        function sumnumbers(){
+            //input
+            let input = parseInt(document.getElementById('input1').value);
+            sum = 0
+            //processing
+            for (let i = 1; i <= input;i+=2){
+                sum +=i;
+            }
+            
+            //output
+            document.getElementById("output").textContent = "The sum of the odd numbers from 1 to " + input+ " = "+sum;
+
+
+
+        }
+
+
+    </Script>
+</head>
+
+<body>
+
+
+    <header>
+        <h1>Week 8: SumOdds</h1>
+        <h2>Tim Bearden</h2>
+
+    </header>
+    <main>
+        <label>Pick a number between 10 and 50 </label>
+        <label> Your Pick: <input type="text" id="input1"></label>
+            <button onclick="sumnumbers()">calculate</button>
+        <hr>
+        <p id="output"></p>
+
+    </main>
+    <footer>
+
+        &copy;2021 &bull; Tim Bearden &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+
+    
+    <script >
+
+
+
+
+    </script>
+      
+</body>
+
+
+</html>
