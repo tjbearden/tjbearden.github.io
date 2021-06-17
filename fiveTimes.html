@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 9 for CIT 160</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <Script>
+        function multiply(){
+            //input
+            let message = '';
+            let i = 1;
+             //processing
+            while (i<=12){
+               let p = i*5
+                //message += '5 x ' +i+ ' = ' +p + '<br>';
+                message += `5 x ${i} = ${p}<br>`;
+                i ++
+            }
+            
+            //output
+            document.getElementById("output").innerHTML = message
+        }
+
+
+    </Script>
+</head>
+
+<body>
+
+
+    <header>
+        <h1>Week 9: Times table</h1>
+        <h2>Tim Bearden</h2>
+
+    </header>
+    <main>
+        <label>Five times table</label>
+        <!-- <label> Input One: <input type="text" id="input1"></label>
+        <label> Input Two: <input type="text" id="input2"></label> -->
+        <button onclick="multiply()">Generate Table</button>
+        <hr>
+        <p id="output"></p>
+
+    </main>
+    <footer>
+
+        &copy;2021 &bull; Tim Bearden &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+
+    
+    <script >
+
+
+
+
+    </script>
+      
+</body>
+
+
+</html>
