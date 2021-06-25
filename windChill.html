@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wind Chill for CIT 160</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <Script>
+        function doInputOut(){
+            //input
+            let temperature = parseFloat(document.getElementById('input1').value);
+            let windspeed = parseFloat(document.getElementById('input2').value);
+            let windchill = ''
+            //processing
+
+            if (temperature < 50 && windspeed > 3){ // check that windchill can be calculated
+            windchill = windChill(temperature,windspeed);
+             }
+            else {windchill = 'No windchill factor'};
+            //output
+            document.getElementById("output").textContent =  windchill + " Degrees fahrenheit";
+        }
+        function windChill(t, s){
+                        //input
+
+
+            let a = Math.pow(s,.16);
+
+            //processing
+            let windchill = 35.74 + 0.6215 * t -35.75* a + .4275 * t * a;
+
+            return windchill.toFixed(1); 
+            //output
+        }
+
+
+    </Script>
+</head>
+
+<body>
+
+
+    <header>
+        <h1>Week 10: Wind Chill</h1>
+        <h2>Tim Bearden</h2>
+
+    </header>
+    <main>
+        <label>Wind Chill Calculator</label>
+        <label> Temperature: <input type="text" id="input1"></label>
+        <label> Wind Speed: <input type="text" id="input2"></label>
+        <button onclick="doInputOut()">Calculate</button>
+        <hr>
+        <p id="output"></p>
+
+    </main>
+    <footer>
+
+        &copy;2021 &bull; Tim Bearden &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+
+    
+    <script >
+
+
+
+
+    </script>
+      
+</body>
+
+
+</html>
