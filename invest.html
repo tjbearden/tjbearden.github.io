@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 1 for CIT 160</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <Script>
+        function doFV(){
+            //input
+            let principal = parseFloat(document.getElementById('input1').value);
+            let annualRate = parseFloat(document.getElementById('input2').value);
+            let years = parseFloat(document.getElementById('input3').value);
+            let periodsPerYear = parseFloat(document.getElementById('input4').value);
+            let fv = '';
+            
+            //processing
+
+            
+            fv = computeFutureValue(principal, annualRate, years, periodsPerYear);
+
+            //output
+            document.getElementById("output").textContent = fv;
+        }
+
+        function computeFutureValue(pv, i, y, ppy){
+             //input
+            let n = y* ppy;
+            let x = (1+i/ppy);
+            let fv = pv*(Math.pow(x,n));
+            console.log(n);
+            console.log(x);
+            
+ 
+            
+            
+            //output
+            return fv.toFixed(2); 
+            
+        }
+
+
+    </Script>
+</head>
+
+<body>
+
+
+    <header>
+        <h1>Week 11: Investment Calculator</h1>
+        <h2>Tim Bearden</h2>
+
+    </header>
+    <main>
+        <label>Investment Calculator</label>
+        <label> Amount invested(principal) <input type="text" id="input1"></label>
+        <label> Annual rate (example .08) <input type="text" id="input2"></label>
+        <label> Number of years <input type="text" id="input3"></label>
+        <label> Periods per year <input type="text" id="input4"></label>
+        <button onclick="doFV()">Calculate future value</button>
+        <hr>
+        <p id="output"></p>
+
+    </main>
+    <footer>
+
+        &copy;2021 &bull; Tim Bearden &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+
+    
+    <script >
+
+
+
+
+    </script>
+      
+</body>
+
+
+</html>

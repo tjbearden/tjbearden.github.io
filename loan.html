@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 2 for CIT 160</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <Script>
+        function doPayment(){
+            //input
+            let principal = parseFloat(document.getElementById('input1').value);
+            let annualRate = parseFloat(document.getElementById('input2').value);
+            let years = parseFloat(document.getElementById('input3').value);
+            let periodsPerYear = parseFloat(document.getElementById('input4').value);
+            let message = ''
+            
+            //processing
+
+            
+            message = computePayment(principal, annualRate, years,periodsPerYear)
+
+            //output
+            document.getElementById("output").textContent = message;
+        }
+        function doBalance(){
+            let principal = parseFloat(document.getElementById('input1').value);
+            let annualRate = parseFloat(document.getElementById('input2').value);
+            let years = parseFloat(document.getElementById('input3').value);
+            let periodsPerYear = parseFloat(document.getElementById('input4').value);
+            let numberOfPaymentPaidToDate = parseFloat(document.getElementById('input5').value);
+            let message = '';
+            
+            //processing
+
+            
+            message = computeBalance(principal, annualRate, years, periodsPerYear,numberOfPaymentPaidToDate);
+
+            //output
+            document.getElementById("output").textContent = message;
+
+        }
+
+        function computePayment(a, i, y, ppy){
+            //input
+            let n = (y*ppy)*-1;
+            let r = i/ppy;// not sure on this one
+
+
+            //processing
+            let f = a*r;
+            let x = 1+r;
+            let c = 1-(Math.pow(x,n));
+            let z = (Math.pow(x,n));
+            let t = 1-z
+            let computePayment =  f/(1-z);
+ 
+            //output
+            return computePayment.toFixed(2);
+        }
+        function computeBalance(a, i, y, ppy,d ){
+            //input
+            let r = i/ppy;
+            let p = computePayment(a, i, y, ppy);
+
+
+
+            //processing
+            let x= 1+r;
+            let b = a*(Math.pow(x,d))-(p*((Math.pow(x,d))-1)/r)
+            //let computeBalance = 
+            //output
+            return b.toFixed(2);
+
+        }
+
+        // function computeFutureValue(pv, i, y, ppy){
+        //      //input
+        //     let n = y* ppy;
+        //     let x = (1+i/ppy);
+        //     let fv = pv*(Math.pow(x,n));
+        //     console.log(n);
+        //     console.log(x);
+            
+ 
+            
+            
+        //     //output
+        //     return fv.toFixed(2); 
+            
+        // }
+        
+
+    </Script>
+</head>
+
+<body>
+
+
+    <header>
+        <h1>Week 11: Loan Calculator</h1>
+        <h2>Tim Bearden</h2>
+
+    </header>
+    <main>
+        <label>Loan Calculator</label>
+        <label> Loan Amount(principal) <input type="text" id="input1"></label>
+        <label> Annual rate (example .08) <input type="text" id="input2"></label>
+        <label> Number of years <input type="text" id="input3"></label>
+        <label> Periods per year <input type="text" id="input4"></label>
+        <label> Payments made to Date <input type="text" id="input5"></label>
+        <button onclick="doPayment()">Calculate Payment</button>
+        <button onclick="doBalance()">Calculate Balance</button>
+        <hr>
+        <p id="output"></p>
+
+    </main>
+    <footer>
+
+        &copy;2021 &bull; Tim Bearden &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+
+    
+    <script >
+
+
+
+
+    </script>
+      
+</body>
+
+
+</html>
