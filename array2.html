@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array 2 for CIT 160</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <Script>
+/* Defining Table
+ * Input: no user input
+ * Processing: Test the countEvens and multiply functions by calling them.
+ * Output: The values returned from the countEvens and multiply functions.
+ */
+ function test() {
+    let list1 = [ 17, 8, 9, 5, 20 ];
+    let list2 = [ 12, 4, 8, 15, 17, 5, 20, 11 ];
+
+    // Test the countEvens function by calling it two times.
+    let count1 = countEvens(list1);
+    let count2 = countEvens(list2);
+
+    // Test the multiply function by calling it two times.
+    let mult1 = multiply(list1, 3);
+    let mult2 = multiply(list2, 2);
+
+    // Build a string to display to the user.
+    let output =
+            count1 + '<br>' +
+            count2 + '<br>' +
+            mult1 + '<br>' +
+            mult2;
+
+    // Display the output string for the user to see.
+    document.getElementById('output').innerHTML = output;
+}
+
+function countEvens(list){
+    // input
+    let evens = list.filter(number => number % 2 == 0);
+    //processing
+    
+    let message = 'Count even numbers in array: ' + [evens.length];
+    
+
+    //output
+    return message;
+}
+function multiply(list,multiplier){
+    let arr = [];
+    for (var i = 0;  i < list.length;  ++i){
+        let y = multiplier;
+        let x = list[i];
+        let z = x * y;  
+        arr.push(z);      
+    }
+    return '['+ arr.toString() + ']'
+  
+    
+}
+    </script>
+</head>
+
+<body>
+
+
+    <header>
+        <h1>Week 13: Arrays</h1>
+        <h2>Tim Bearden</h2>
+
+    </header>
+    <main>
+        <label>Arrays</label>
+
+        <button onclick="test()">process</button>
+        <hr>
+        <p id="output"></p>
+
+    </main>
+    <footer>
+
+        &copy;2021 &bull; Tim Bearden &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+
+    
+    <script >
+
+
+
+
+    </script>
+      
+</body>
+
+
+</html>
